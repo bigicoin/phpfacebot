@@ -1,0 +1,7 @@
+# letsencrypt folders
+www/.well-known
+
+# local config file
+config.local.php
+
+# if using composer, add any composer vendor dirs here too

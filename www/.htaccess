@@ -1,0 +1,23 @@
+# General
+DirectoryIndex index.php
+Header set Access-Control-Allow-Origin "*"
+Options +FollowSymLinks
+
+# Rewrite rules begin
+RewriteEngine on
+
+# SSL enforcement - uncomment lines below after getting SSL setup
+#RewriteCond %{HTTPS} off
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Toro routing
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php)
+RewriteRule ^(.*)$ /index.php/$1 [L]
+
+# Disable composer, vendor and internal accesses - uncomment if you use composer
+#RewriteRule ^(/?composer\..+)$ /index.php/$1 [L]
+#RewriteRule ^(/?vendor/.*)$ /index.php/$1 [L]
+RewriteRule ^(/?internal/.*)$ /index.php/$1 [L]
