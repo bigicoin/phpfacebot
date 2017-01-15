@@ -81,6 +81,15 @@ The framework also handles:
 *	Batching
 	*	High traffic volume bots can get messages in a batch. A request can contain multiple `entry`s,
 		and each `entry` can contain multiple `messaging`s. This framework handles both properly.
+*	Gracefully fail
+	*	PHP fatal errors normally return a 500 HTTP code. This causes Facebook to repeatedly try the request
+		and eventually switching off your webhook endpoint. The framework handles this and gracefully fail
+		the request without alarming Facebook's servers, even if some code paths lead to fatal errors.
+*	Acknowledging messages
+	*	Facebook expects the webhook endpoint to acknowledge and return a 200 HTTP response ASAP. If the
+		request isn't returned within 15 seconds, it is considered a failure and will be repeated. The
+		framework handles this and close the request with a 200 response properly before executing other
+		code. This allows you to do sleep()s and send multiple messages as a response to a message.
 *	Wit.ai NLP
 	*	Contains a simple Wit API wrapper to allow you to send text messages to wit.ai's intent parsing
 		service to parse a natural language text if needed.
