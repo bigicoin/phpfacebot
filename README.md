@@ -1,3 +1,12 @@
+PHPFaceBot
+==========
+
+PHPFaceBot is a framework that provides all the groundwork to create a Facebook Messenger Bot app in PHP.
+
+To use this, you'll need to have a web server running Apache, with PHP 5.3+. See system requirements below for more details.
+
+To set up a Facebook Messenger Bot now, see the instructions below.
+
 Facebook Messenger Bot setup quick guide
 ========================================
 
@@ -120,6 +129,8 @@ Required:
 
 Optional:
 
+1.	[Redis](https://redis.io) - my choice of a data store (database). Optional because the demo bot can still run without it,
+	just set REDIS_ENABLED to 0 in your config file. Some features will be disabled without it.
 1.	[phpiredis](https://github.com/nrk/phpiredis) - my choice of a PHP Redis client. You can use a different Redis client
 	(and modify the Redis.php wrapper code), or you can even use a different database.
 1.	PHP module: [POSIX](http://php.net/manual/en/ref.posix.php) - only if you want to use the built-in queue-consumer
