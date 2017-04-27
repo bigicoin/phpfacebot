@@ -151,6 +151,10 @@ class DemoBot {
 				} else {
 					$output->setText('No button clicked :(')->send();
 				}
+			} else if ($payload->getType() == 'getStartedButton') {
+				$output->setText('You got started!')->send();
+			} else if ($payload->getType() == 'menuButton') {
+				$output->setText('You pressed Menu Button!')->send();
 			}
 		}
 	}

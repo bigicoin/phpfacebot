@@ -2,6 +2,9 @@
 
 /**
  * This class provides some methods to set up settings for the bot app.
+ * Deprecation note: FB is deprecating the Thread Settings API (this file),
+ * in favor of the Messenger Profile API (FBMessengerProfile.php in this framework).
+ * Consider using only that class from now on.
  */
 
 class FBSettings {

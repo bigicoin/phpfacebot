@@ -65,10 +65,16 @@ Supported Messenger API features
 *	Plugin
 	*	Send to messenger (opt-in)
 	*	Message Us
-*	Thread Settings
+*	Thread Settings (being deprecated by FB, use Messenger Profile instead)
 	*	Greeting text
 	*	Get Started button
 	*	Persistent menu
+	*	Domain whitelisting
+*	Messenger Profile
+	*	Greeting text
+	*	Get Started button
+	*	Persistent menu
+		*	Nested menu items
 	*	Domain whitelisting
 *	User profile API
 	*	first_name, last_name, profile_pic, locale, timezone, gender, is_payment_enabled

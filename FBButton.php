@@ -15,6 +15,7 @@ class FBButtonUrl extends FBButton {
 	public $url;
 	public $title;
 	public $webview_height_ratio;
+	public $webview_share_button;
 	public function __construct() {
 		$this->type = 'web_url';
 		return $this;
@@ -31,6 +32,10 @@ class FBButtonUrl extends FBButton {
 	public function setWebviewHeightRatio($webview_height_ratio) {
 		// must be compact, tall, or full
 		$this->webview_height_ratio = $webview_height_ratio;
+		return $this;
+	}
+	public function setWebviewShareButtonHidden() {
+		$this->webview_share_button = 'hide';
 		return $this;
 	}
 }
