@@ -61,12 +61,12 @@ class WebhookReceiveHandler {
 		// source: http://stackoverflow.com/questions/15273570/continue-processing-php-after-sending-http-response
 		set_time_limit(0);
 		ob_start();
-		echo 'success'; // FB does not care return message as long as it's 200 OK
-		$size = ob_get_length();
+		// echo 'success'; // FB does not care return message as long as it's 200 OK
+		// $size = ob_get_length();
 		header($_SERVER["SERVER_PROTOCOL"] . " 200 OK");
 		header("Status: 200 OK");
 		header("Content-Encoding: none"); // disable compression
-		header("Content-Length: {$size}");
+		// header("Content-Length: {$size}");
 		header("Connection: close");
 		ob_end_flush();
 		ob_flush();
